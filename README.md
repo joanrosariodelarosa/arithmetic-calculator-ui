@@ -7,7 +7,14 @@ LIVE VERSION : https://stormy-reef-51242-892f30267fba.herokuapp.com/
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Pre-conditions
+* `Node 18.16.1`
+* `9.5.1`
+
+1. `npm install` (installing all dependencies)
+2. `npm run start-dev` (start localhost)
+
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Access Login
 
