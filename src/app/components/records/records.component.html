@@ -1,0 +1,46 @@
+<div class="bg-gray-950 text-white p-4">
+  <h5 class="text-white">Records</h5>
+  <input type="text" [(ngModel)]="searchText" (keyup)="filterRecords()"
+         class="form-control bg-white text-black rounded p-2" placeholder="Search...">
+  <br>
+  <table class="table-auto w-full">
+    <thead>
+    <tr>
+      <th class="px-4 py-2 cursor-pointer" (click)="sortRecords('operation')">Operation
+        <span class="sorting-indicator" [ngClass]="{'asc': sortColumn === 'operation'
+        && sortDirection === 'asc', 'desc': sortColumn === 'operation' && sortDirection === 'desc'}"></span>
+      </th>
+      <th class="px-4 py-2 cursor-pointer" (click)="sortRecords('amount')">Result
+        <span class="sorting-indicator" [ngClass]="{'asc': sortColumn === 'amount'
+        && sortDirection === 'asc', 'desc': sortColumn === 'amount' && sortDirection === 'desc'}"></span>
+      </th>
+      <th class="px-4 py-2 cursor-pointer" (click)="sortRecords('userBalance')">User Balance
+        <span class="sorting-indicator" [ngClass]="{'asc': sortColumn === 'userBalance'
+        && sortDirection === 'asc', 'desc': sortColumn === 'userBalance' && sortDirection === 'desc'}"></span>
+      </th>
+      <th class="px-4 py-2 cursor-pointer" (click)="sortRecords('date')">Date
+        <span class="sorting-indicator" [ngClass]="{'asc': sortColumn === 'date'
+        && sortDirection === 'asc', 'desc': sortColumn === 'date' && sortDirection === 'desc'}"></span>
+      </th>
+      <th class="px-4 py-2">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let record of filteredRecords"
+        class="bg-gray-900">
+      <td class="px-4 py-2">{{ record.operation.operationType }}</td>
+      <td class="px-4 py-2">{{ record.amount }}</td>
+      <td class="px-4 py-2">{{ record.userBalance }}</td>
+      <td class="px-4 py-2">{{ record.date }}</td>
+      <td class="px-4 py-2">
+        <button class="btn btn-sm btn-danger" (click)="actionRecord('remove',record.id)">Remove</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <ul class="pagination mt-4">
+    <li class="page-item" [ngClass]="{ 'active': currentPage === page - 1 }" *ngFor="let page of totalPages">
+      <a class="page-link bg-gray-800 text-white" href="#" (click)="changePage(page)">{{ page }}</a>
+    </li>
+  </ul>
+</div>

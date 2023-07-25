@@ -1,0 +1,7 @@
+{
+  "/operation/*": {
+    "target": "http://operations.us-east-1.elasticbeanstalk.com",
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

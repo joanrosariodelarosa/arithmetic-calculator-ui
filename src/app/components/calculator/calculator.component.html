@@ -1,0 +1,137 @@
+<div class="w-full h-screen flex justify-center items-center bg-gray-950 text-slate-200 font-bold">
+  <div style="border:1px solid white; border-radius: 8px">
+    <label class="text-white" style="padding:10px; text-align: right">Welcome! {{userName}} </label>
+    <p class="bg-green-700 balance">Balance: ${{ currentBalance }}</p>
+    <app-operation-details></app-operation-details>
+    <!--Calculator-->
+    <div style="margin-left:22rem">
+      <div class="w-44 mb-1 border rounded bg-green-700 text-lg text-slate-800 overflow-hidden">
+        <div [ngStyle]="{ 'font-family': 'Digital' }" class="w-full h-10 p-2 text-right" [textContent]="display"></div>
+      </div>
+      <div class="grid grid-cols-4 justify-center gap-2 py-1 w-44">
+        <button
+          class="col-span-2 h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="reset()">
+          C
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleBackspace()">
+          &#9003;
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleOperatorClick('Division')">/
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(7)">
+          7
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(8)">
+          8
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(9)">
+          9
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleOperatorClick('Multiplication')">
+          *
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(4)">
+          4
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(5)">
+          5
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(6)">
+          6
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleOperatorClick('Subtraction')">
+          -
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(1)">
+          1
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(2)">
+          2
+        </button>
+
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(3)">
+          3
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleOperatorClick('Addition')">
+          +
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleToggleSignClick()">
+          +/-
+        </button>
+        <button
+          class="h-10 rounded-md bg-cyan-700 hover:text-green-400"
+          (click)="handleNumberClick(0)">
+          0
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleDotClick()">
+          .
+        </button>
+
+        <button
+          class="h-10 border rounded-md border-gray-200 hover:border-green-400 hover:text-green-400"
+          (click)="handleEqualClick()">
+          =
+        </button>
+        <button
+          class="mt-2 mr-2 bg-cyan-700 text-slate-200 hover:bg-green-400 hover:text-slate-800 px-6 py-2 rounded text-center"
+          (click)="generateRandomString()">
+          RS
+        </button>
+        <button
+          class="h-10 mt-2 ml-2 border rounded-md border-gray-200 hover:border-green-400 px-6 py-6 hover:text-green-400 text-center"
+          (click)="handleOperatorClick('SquareRoot')">
+          Sq
+        </button>
+      </div>
+    </div>
+    <app-records (balanceUpdated)="onBalanceUpdated($event)"></app-records>
+  </div>
+</div>
