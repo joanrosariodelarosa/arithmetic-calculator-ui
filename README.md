@@ -3,7 +3,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Untitled_ Jul 23, 2023 12_03 AM.gif](..%2FUntitled_%20Jul%2023%2C%202023%2012_03%20AM.gif)
 
-LIVE VERSION : https://stormy-reef-51242-892f30267fba.herokuapp.com/
+LIVE VERSION : https://stormy-reef-51242-892f30267fba.herokuapp.com/login
 
 ## Development server
 
